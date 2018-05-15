@@ -1,7 +1,9 @@
 #pragma once
+
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <sys/mman.h>
 #include <sys/fcntl.h>
 #include <unistd.h>
@@ -26,7 +28,7 @@ class Udmabuf {
 						panic("");
 					}
 					read(fd, buf1024, 1024);
-					sscanf(buf1024, "%ld", &_size);
+					sscanf(buf1024, "%lu", &_size);
 					close(fd);
 				}
 
